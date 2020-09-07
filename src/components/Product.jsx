@@ -78,10 +78,10 @@ const ProductWrapper = styled.div`
 &:hover{
     .card{
         border: 0.04rem solid rgba(0,0,0,0.2);
-        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,5);
     }
     .card-footer{
-        background: rgba(247, 247, 247)
+        background: rgba(247, 173, 173)
     }
 }
     .img-container{
@@ -99,9 +99,8 @@ const ProductWrapper = styled.div`
         bottom: 0;
         right: 0;
         padding 0.2rem 0.4 rem;
-        background: var(--lightBlue);
+        background: var(--lightGreen);
         border: none;
-        color: var(--mainWhite);
         font-size: 1.4rem;
         border-radius: 0.5rem 0 0 0;
         transform: translate(100%, 100%);
@@ -111,7 +110,7 @@ const ProductWrapper = styled.div`
         transform: translate(0,0);
     }
     .cart-btn:hover {
-        color: var(--lightPurple);
+        color: var(--lightPink);
         cursor: pointer
     }
 `;
