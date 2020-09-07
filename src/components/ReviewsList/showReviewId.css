@@ -1,0 +1,58 @@
+.backLink {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+.editLink {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+
+.backLink:hover {
+    background-color: black;
+    color: goldenrod;
+    text-shadow: 1px 1px 1px rgb(114, 86, 15);
+    box-shadow: 6px 5px 24px #cb9521;
+    text-decoration: none;
+}
+
+.editLink:hover {
+    background-color: black;
+    color: goldenrod;
+    text-shadow: 1px 1px 1px rgb(114, 86, 15);
+    box-shadow: 6px 5px 24px #cb9521;
+    text-decoration: none;
+}
+
+
+.reviewId {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+    border: 5px solid black;
+    background-color: black;
+    color: whitesmoke;
+    margin: 30px;
+    
+}
+
+.rIdContainer {
+    display: flex;   
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteReviewButton:hover {
+    cursor: pointer;
+    background-color: black;
+    color: lightsalmon;
+    text-shadow: 1px 1px 1px salmon;
+    box-shadow: 6px 5px 24px lightsalmon;
+    text-decoration: none;
+}

@@ -58,6 +58,11 @@ export default class ProductDetails extends Component {
                                {inCart ? 'inCart' : 'add to cart'}
                            </ButtonContainer>
                         </Link> 
+                        <Link to='/reviews'>
+                            <ButtonContainer>
+                                Add A Review
+                            </ButtonContainer>
+                        </Link>
                         </div>
                     );
                     

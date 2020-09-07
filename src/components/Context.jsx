@@ -10,6 +10,10 @@ class ProductProvider extends Component {
         cart: [],
         popUpOpen: false,
         popUpProduct: productDetail,
+        cartSubTotal:0,
+        cartTax: 0,
+        cartTotal: 0
+
     };
     componentDidMount() {
         this.setProducts();
@@ -65,6 +69,18 @@ class ProductProvider extends Component {
             return{ popUpOpen: false};
         });
     };
+    increment = (id) => {
+        console.log('adding increments');
+    }
+    decrement = (id) => {
+        console.log('adding decrements');
+    }
+    removeItem = (id) => {
+        console.log('item removed');
+    }
+    clearCart = () => {
+        console.log('cart cleared');
+    }
     render() {
         return (
             <ProductContext.Provider value={{
@@ -72,7 +88,11 @@ class ProductProvider extends Component {
                 handleDetail: this.handleDetail,
                 addToCart: this.addToCart,
                 openPopUp: this.openPopUp,
-                closePopUp: this.closePopUp
+                closePopUp: this.closePopUp,
+                increment: this.increment,
+                decrement: this.decrement,
+                removeItem: this.removeItem,
+                clearCart: this.clearCart
             }}>
                 {this.props.children}
             </ProductContext.Provider>

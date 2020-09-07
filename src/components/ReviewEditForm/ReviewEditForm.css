@@ -1,0 +1,51 @@
+.editButton {
+    color: white;
+    background-color: black;
+    border-radius: 50px;
+    height: 50px;
+}
+
+.editButton:hover {
+        color: lightsalmon;
+        background-color: black;
+        border-radius: 50px;
+        height: 50px;
+        cursor: pointer;
+}
+
+.editCancel {
+    color: white;
+    background-color: black;
+    border-radius: 35px;
+    height: 50px;
+    margin: 5px;
+    padding: 10px solid grey;
+    text-decoration: none;
+}
+
+.EditReviewForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    min-height: 100vh;
+    border: 5px solid black;
+    background-color: black;
+    color: whitesmoke;
+    margin: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.editform {
+    display: flex;
+    flex-grow: 1;
+}
+
+.editHeader {
+    font-weight: 800;
+    font-size: 40px;
+}

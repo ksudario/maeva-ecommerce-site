@@ -1,0 +1,42 @@
+.reviewList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 150px;
+    padding: 5px;
+    margin: 15px;
+    border: 2px solid lightsalmon;
+    border-radius: 5%;
+    text-decoration: none;
+    background-color: white;
+    color: lightsalmon;
+    font-weight: 800;
+    opacity: 0.6;
+}
+.reviewList:hover {
+    background-color: black;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    opacity: 1;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 0.2rem;
+}
+
+.rTitle {
+    padding: 10px;
+    text-align: justify;
+    color: lightsalmon;
+    font-weight: 800;
+}
