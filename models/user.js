@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
 const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema({
@@ -19,16 +18,21 @@ userSchema.set('toJSON', {
   }
 });
 
+userSchema.methods.comparePassword = function(tryPassword, cb) {
+  bcrypt.compare(tryPassword, this.password, cb);
+}
+
+//pre-mongoose fuciton
 userSchema.pre('save', function(next) {
-    const user = this;
-    if (!user.isModified('password')) return next();
-    // password has been changed - salt and hash it
-    bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash) {
-      if (err) return next(err);
-      // replace the user provided password with the hash
-      user.password = hash;
-      next();
-    });
-  });
+  //this references the current doc
+  const user = this;
+  if (!user.isModified('password')) return next();
+  bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash) {
+    if (err) return next(err);
+    //replace user password w/ hash
+    user.password = hash;
+    next();
+  })
+})
 
 module.exports = mongoose.model('User', userSchema);

@@ -12,6 +12,7 @@ export default class NavBar extends Component {
                         <Link to='/' className='nav-link'>
                         Maeva 🏝️
                         </Link>
+                        
                     
                <Link to ='/cart' className='ml-auto'>
                <Link to="/login" className='NavBar-link'>LOG IN</Link>
@@ -27,4 +28,3 @@ export default class NavBar extends Component {
         )
     }
 }
-
