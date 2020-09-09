@@ -46,13 +46,6 @@ handleEditReview = async (id, data) => {
     this.setState({ reviews, reviewToEdit: null });
 }
 
-handleEdit = async id => {
-  const reviewToEdit = await this.statereviews.find(function(review) {
-      return review._id === id;
-  })
-this.setState({ reviewToEdit });
-}
-
 handleLogout = () => {
   userService.logout();
   this.setState({ user: null });
@@ -69,14 +62,14 @@ async componentDidMount() {
 }
 
 
-  render() {
-    return (
-      <React.Fragment>
+render() {
+  return (
+    <React.Fragment>
         <NavBar user={this.state.user} handleLogout={this.handleLogout}/>
         <Switch>
           <Route exact path='/details' component={ProductDetails}/>
           <Route exact path='/cart' component={Cart}/>
-          <Route path='/' component={ProductList}/>
+          <Route exact path='/' component={ProductList}/>
           <Route exact path='/reviews/:id/edit' render={(props) =>
           <ReviewEditForm  
             {...props}
@@ -103,15 +96,25 @@ async componentDidMount() {
             reviews={this.state.reviews}
             />
             }/>
-            <Route exact path='/signup' render={({ history }) => 
-              <SignupPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}/>
+            <Route exact path='/signup' render={ (props) =>
+              userService.getUser() ?
+                <Redirect to='/' />
+              :
+                <SignupPage
+                  {...props}
+                  history={props.history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
             }/>
-            <Route exact path='/login' render={({history}) => 
-            <LoginPage  
-              handleSignupOrLogin={this.handleSignupOrLogin}
-              history={history}/>
+            <Route exact path='/login' render={ (props) => 
+              userService.getUser() ?
+                <Redirect to='/' />
+              :
+                <LoginPage
+                  {...props}
+                  history={props.history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
             }/>
 
 <Route exact path='/reviewForm' render={(props) => 
