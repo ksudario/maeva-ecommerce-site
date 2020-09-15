@@ -35,7 +35,7 @@ handleSubmit = e => {
     <form className="reviewForm">
       <input 
         type='text'
-        value={this.state.review}
+        value={this.state.reviewer}
         onChange={this.handleChange}
         name='reviewer'
         placeholder='Please Enter Your Name'/>
