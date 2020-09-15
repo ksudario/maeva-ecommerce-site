@@ -8,12 +8,10 @@ router.post('/signup', usersCtrl.signup);
 router.post('/login', usersCtrl.login);
 
 //Review Routes
-router.get('/', reviewCtrl.index);
+router.get('/reviewsList', reviewCtrl.index);
 router.post('/:id/reviews', reviewCtrl.create);
 router.put('/:id/reviews', reviewCtrl.updateReview);
-//delet /api/todo/:id
 router.delete('/:id/reviews', reviewCtrl.deleteReview);
-//put /api/todos/:id/edit
 router.put('/:id/reviews/edit', reviewCtrl.editReview);
 
 

@@ -9,20 +9,14 @@ function signup(user) {
     body: JSON.stringify(user)
   })
   .then(res => {
+    console.log(res)
     if (res.ok) {
-      
-      return res.json();
-
-    }else{
-      return res.json();
-      throw new Error('Email already taken!');
-    }
+      return res.json();}
     // Probably a duplicate email
-   // throw new Error('Email already taken!');
-  }).catch(error => console.log(error))
-  .then(({ token }) => {
-    tokenService.setToken(token);
-  });
+    throw new Error('Email already taken!');
+  })
+  .then(({token}) => tokenService.setToken(token));
+  //object destructuring --> .then(token => token.token)
 }
 
 function getUser() {

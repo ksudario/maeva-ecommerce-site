@@ -13,21 +13,24 @@ const NavBar = (props) => {
             {props.user ?
             <div>
                 <span>Welcome, <strong>{props.user.name}</strong>!</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to="" onClick={props.handleLogout} className="NavBar-link">LOG OUT</Link>
+                <Link to="" onClick={props.handleLogout} className="NavBar-link">LOG OUT</Link>&nbsp;&nbsp; &nbsp;&nbsp;
        
             </div>  
         :
         <div>
         <Link to="/login" className='NavBar-link'>LOG IN</Link>
         &nbsp;&nbsp; &nbsp;&nbsp;
-        <Link to="/signup" className='NavBar-link'>SIGN UP</Link>
-      </div>    
+        <Link to="/signup" className='NavBar-link'>SIGN UP</Link>&nbsp;&nbsp; &nbsp;&nbsp;
+      </div> 
+      
+        
     }
             
         
                         
-                        
-                    
+        <div>               
+        <Link to='/reviewForm'>Share a Review! </Link></div> &nbsp;&nbsp; &nbsp;&nbsp;
+        <div><Link to='/reviews'>See What Others Have To Say About Our Products</Link></div> 
                <Link to ='/cart' className='ml-auto'>
                    <ButtonContainer>
                        <span className='mr-2'>

@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 export default class ReviewEditForm extends Component {
     state = this.props.review
 
-handleEdit = (e) => {
+handleEditReview = (e) => {
     const reviewId = this.state._id;
         e.preventDefault();
         this.props.handleEditReview(reviewId, this.state) 
-        this.setState({name: "", 
+        this.setState({reviewer: "", 
                         review: ""
                     },
           function () {
@@ -27,12 +27,12 @@ render(){
     return (
         <>
         <div className="editform">
-        <form className="EditReviewForm" onSubmit={this.handleEdit}><br/><br/><br/><br/>
+        <form className="EditReviewForm" onSubmit={this.handleEditReview}><br/><br/><br/><br/>
           <header className="rHeader">Edit Review</header><br/><br/><br/>
             <label>Name: </label>
             <input onChange={ this.handleChange } 
-            value={this.state.name}
-            name="name"
+            value={this.state.reviewer}
+            name="reviewer"
             /><br/>
             <label>Review: </label>
             <input onChange={ this.handleChange } 

@@ -1,7 +1,8 @@
 const baseURL = '/api/users';
 
 function getReviews() {
-    return fetch(baseURL).then(response => response.json());
+    return fetch(baseURL + "/reviewsList").then(response => response.json());
+
 }
 
 function createReview(data, id) {
@@ -14,7 +15,7 @@ function createReview(data, id) {
     }).then(response => response.json());
 }
 
-function updateDoneReview(id) {
+function updateReview(id) {
     return fetch(baseURL + "/" + id, {
         method: 'PUT'
     }).then(response => response.json());
@@ -26,7 +27,7 @@ function removeReview(id) {
     }).then(response => response.json());
 }
 
-function updateReview(id, data) {
+function updateDoneReview(id, data) {
     console.log(data)
     return fetch(baseURL + "/" + id + "/reviews/edit", {
         method: 'PUT',
@@ -37,4 +38,4 @@ function updateReview(id, data) {
     }).then(response => response.json());
 }
 
-export default { getReviews, createReview, removeReview, updateDoneReview, updateReview }
+export default { getReviews, createReview, removeReview, updateReview,  updateDoneReview }
