@@ -49,3 +49,52 @@
     font-weight: 800;
     font-size: 40px;
 }
+
+
+.LoginPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-width: 20vh;
+    min-height: 20vh;
+    background-color: white;
+    color: black;
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    
+  .loginButton {
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    font-weight: 100;
+    }
+    
+  .loginButton:hover {
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    height: 50px;
+    cursor: pointer;
+    }
+    
+  .cancelButton {
+    color: blue;
+    }
+    
+  .lpform {
+        display: flex;
+        flex-grow: 1;
+    }
+     
+  .liHeader {
+      font-weight: 800;
+      font-size: 40px;
+    }

@@ -11,17 +11,17 @@
 
 .backLink:hover {
     background-color: black;
-    color: goldenrod;
-    text-shadow: 1px 1px 1px rgb(114, 86, 15);
-    box-shadow: 6px 5px 24px #cb9521;
+    color: blue;
+    text-shadow: 1px 1px 1px lightblue;
+    box-shadow: 6px 5px 24px lightblue;
     text-decoration: none;
 }
 
 .editLink:hover {
     background-color: black;
-    color: goldenrod;
-    text-shadow: 1px 1px 1px rgb(114, 86, 15);
-    box-shadow: 6px 5px 24px #cb9521;
+    color: blue;
+    text-shadow: 1px 1px 1px lightblue;
+    box-shadow: 6px 5px 24px lightblue;
     text-decoration: none;
 }
 

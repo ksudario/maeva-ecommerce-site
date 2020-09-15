@@ -5,13 +5,13 @@ import userService from '../utils/userService';
 
 export default class ReviewForm extends Component {
   state = {
-    reviewer:"",
-    review:"",
+    reviewer:'',
+    review:'',
   }
 
   handleChange = e => {
-    this.setState({ 
-      [e.target.reviewer]: e.target.value
+    this.setState({
+      [e.target.name]: e.target.value
   });
 }
 
@@ -31,18 +31,25 @@ handleSubmit = e => {
   
   render(){
   return (
-    <form>
+
+    <form className="reviewForm">
       <input 
+        type='text'
         value={this.state.review}
         onChange={this.handleChange}
+        name='reviewer'
         placeholder='Please Enter Your Name'/>
-      <input 
-        value={this.state.reviewer}
-        onChange={this.handleChange}
-        placeholder='Share Your Thoughts'/>
+        
+        <input
+  type='text'
+  value={this.state.review}
+  onChange={this.handleChange}
+  name='review'
+  placeholder='Share Your Thoughts'/>
       <button>Submit</button>
     </form>
   );
 }
 
 } 
+
