@@ -2,8 +2,21 @@ import React, { Component } from 'react';
 import {ProductConsumer} from './Context';
 import {Link} from 'react-router-dom';
 import {ButtonContainer} from './Button';
+import reviewEntry from './utils/reviewEntry';
+import UpdateQuote from '../components/Quote';
 
 export default class ProductDetails extends Component {
+  constructor() {
+    super();
+    this.state = {
+      reviews: null
+    };
+  }
+  async componentDidMount() {
+      const reviews = await reviewEntry.getReviews()
+      console.log(reviews);
+      this.setState({reviews});
+  }
     render() {
         return (
             <ProductConsumer>
@@ -43,11 +56,19 @@ export default class ProductDetails extends Component {
                         <p className='text-muted lead'>{info}</p>
                         </div>
                         </div>
+                        <div>
+                          {this.state.reviews && this.state.reviews.map(review => (
+                            <div>
+                              <p>{review.name}</p>
+                              <p>{review.review}</p>
+                            </div>
+                          ))}
+                        </div>
                         <Link to='/'>
                             <ButtonContainer>
                                 Back To Products
                             </ButtonContainer>
-                           <ButtonContainer 
+                           <ButtonContainer
                            cart
                            disabled={inCart ? true:false}
                            onClick={() => {
@@ -57,17 +78,18 @@ export default class ProductDetails extends Component {
                            >
                                {inCart ? 'inCart' : 'add to cart'}
                            </ButtonContainer>
-                        </Link> 
+                        </Link>
                         <Link to='/reviewForm'>
                             <ButtonContainer>
                                 Add A Review
                             </ButtonContainer>
                         </Link>
+                        <br></br><br></br>
+                        <UpdateQuote/>
                         </div>
                     );
-                    
                 }}
             </ProductConsumer>
         );
     }
-} 
+}

@@ -32,21 +32,22 @@ handleSubmit = e => {
   render(){
   return (
 
-    <form className="reviewForm">
-      <input 
+    <form className="reviewForm" onSubmit={this.handleSubmit}>
+      <input
         type='text'
         value={this.state.reviewer}
         onChange={this.handleChange}
         name='reviewer'
-        placeholder='Please Enter Your Name'/>
-        
-        <input
-  type='text'
-  value={this.state.review}
-  onChange={this.handleChange}
-  name='review'
-  placeholder='Share Your Thoughts'/>
-      <button>Submit</button>
+        placeholder='Please Enter Your Name'
+      />
+      <input
+        type='text'
+        value={this.state.review}
+        onChange={this.handleChange}
+        name='review'
+        placeholder='Share Your Thoughts'
+      />
+      <input type="submit" value="Submit" />
     </form>
   );
 }

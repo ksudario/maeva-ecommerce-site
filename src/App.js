@@ -14,6 +14,7 @@ import ReviewsList from '../src/components/ReviewsList/ReviewsList';
 import ReviewEditForm from '../src/components/ReviewEditForm/ReviewEditForm';
 import SignupPage from '../src/components/pages/SignupPage/SignupPage';
 import LoginPage from '../src/components/pages/LoginPage/LoginPage';
+import UpdateQuote from './components/Quote';
 
 class App extends Component {
   constructor() {
@@ -126,6 +127,7 @@ render() {
                 :
                 <Redirect to='login' />
             }/>
+            <UpdateQuote/>
         </Switch>
          
       </React.Fragment>
