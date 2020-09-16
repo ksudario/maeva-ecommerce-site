@@ -3,14 +3,14 @@ A full-stack React app that lets users buy jewelry and leave a store review.
 
 ## Technologies Used
 
---HTML
---CSS
---JavaScript
---MongoDB 
---Express
---React
---Node
---APIs [Quote of the Day API] (http://quotes.rest/qod)
+-HTML
+-CSS
+-JavaScript
+-MongoDB 
+-Express
+-React
+-Node
+-Quote of the Day API: (http://quotes.rest/qod)
 
 
 ## Screenshots
